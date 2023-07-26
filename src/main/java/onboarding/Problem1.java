@@ -78,6 +78,7 @@ public class Problem1 {
         }
     }
 
+
     public static void main(String[] args) {
         //각 user의 길이2 배열 생성
         List<Integer> pobi = new ArrayList<Integer>(Arrays.asList(1, 2));
@@ -89,6 +90,5 @@ public class Problem1 {
 
         //solution: 승패 출력
         System.out.print(solution(pobi, crong));
-
     }
 }
