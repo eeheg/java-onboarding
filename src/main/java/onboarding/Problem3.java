@@ -11,20 +11,20 @@ public class Problem3 {
 
     //number의 자릿수 추출
     static List<Integer> getDigits (int number){
-        List<Integer> Digits = new ArrayList<>();
-        Digits.add((int)(number/1000)); //천의자리수
-        Digits.add((int)(number/100)%10); //백의자리수
-        Digits.add((int)(number/10)%10); //십의자리수
-        Digits.add(number%10);  //일의자리수
-        return Digits;
-
+        List<Integer> digits = new ArrayList<>();
+        while (number > 0) {
+            digits.add(number%10);  //마지막 자리수 추출
+            number /= 10;
+        }
+        Collections.reverse(digits);
+        return digits;
     }
 
     //Digits 내 3,6,9 개수
-    static int clap (List<Integer> Digits) {
+    static int clap (List<Integer> digits) {
         int claps =0;
-        for (int i=0;i<4;i++) {
-            if(Digits.get(i)==3 || Digits.get(i)==6 || Digits.get(i)==9) {
+        for (int i=0; i<digits.size(); i++) {
+            if(digits.get(i)==3 || digits.get(i)==6 || digits.get(i)==9) {
                 claps++;
             }
         }
