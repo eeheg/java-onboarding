@@ -33,7 +33,7 @@ public class Problem1_1 {
         int mult = 1;
         for (int digit : digitOfPage) {
             sum += digit;
-            mult *= mult;
+            mult *= digit;
         }
         return Math.max(sum,mult);
     }
